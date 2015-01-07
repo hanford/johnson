@@ -2,25 +2,16 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
-    console.log('loaded')
+angular.module('johnson.controllers', [])
+.controller('MainCtrl', function ($scope, $http) {
+  $scope.search = function(query) {
+    var search = {
+      'url': query
+    };
 
-  }).
-  controller('MyCtrl1', function ($scope, $http) {
-    // write Ctrl here
-    $http({
-      method: 'GET',
-      url: '/api/tweets'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.tweets = data.tweets;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.tweets = [];
-    });
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
+    $http.get('/api/start', search).success(function (data, status, headers, config) {
+      console.log(data, status, headers, config);
+    })
+  }
 
-  });
+})
