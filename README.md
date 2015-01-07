@@ -1,3 +1,5 @@
-**Angular Express Seed**
+npm install
 <br />
-To use first run <code>bower i</code> and <code>node install</code>
+bower install
+<br />
+node app
