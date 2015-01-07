@@ -12,9 +12,10 @@
   <body ng-app="johnson">
     <div ng-controller="MainCtrl">
       <form ng-submit="search(query)" class="center-input">
-        <input type="text" placeholder="url" ng-model="query">
+        <input type="text" placeholder="URL" ng-model="query" style="width: 400px;">
         <button class="button button-primary" ng-click="search(query)">grab url</button>
       </form>
+      <p>{{html}}</p>
     </div>
 
     <script src="js/app.js"></script>

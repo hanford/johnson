@@ -9,8 +9,9 @@ angular.module('johnson.controllers', [])
       'url': query
     };
 
-    $http.get('/api/start', search).success(function (data, status, headers, config) {
-      console.log(data, status, headers, config);
+    $http.post('/api/geturl', search).then(function(response) {
+      console.log(response);
+      $scope.html = response.data.html;
     })
   }
 
