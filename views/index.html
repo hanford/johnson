@@ -5,13 +5,13 @@
   <base href="/">
   <title>Angular Express Seed</title>
   <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel="stylesheet" href="/css/kfonts.css"> -->
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="lib/materialize/dist/css/materialize.css">
-  <!-- <link rel="stylesheet" href="lib/skeleton/css/skeleton.css"> -->
-  <script src="lib/jquery/dist/jquery.js"></script>
-  <script src="lib/materialize/dist/js/materialize.js"></script>
+  <link rel="stylesheet" href="lib/normalize.css/normalize.css">
+  <link rel="stylesheet" href="lib/skeleton/css/skeleton.css">
+  <link rel="stylesheet" href="lib/waves/dist/waves.css">
 
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/waves/dist/waves.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
@@ -19,7 +19,7 @@
 <body ng-app="johnson">
   <!-- Color Bar -->
   <div ng-controller="MainCtrl">
-    <div class="nav">
+    <header class="nav">
       <div class="kim-yellow color-block"></div>
       <div class="kim-amber color-block"></div>
       <div class="kim-orange color-block"></div>
@@ -36,11 +36,12 @@
       <div class="brand-cont">
         <div class="navbar-brand">Kimono<span>labs</span><span class="beta-tag">beta</span></div>
       </div>
-      <form ng-submit="search(query)" class="center-input">
-        <input type="text" placeholder="URL" ng-model="query" class="url-input">
-        <button class="btn btn-default waves-effect" ng-disabled="!query" type="submit" class="inline">grab url</button>
+      <form ng-submit="search(query)" class="form-position">
+        <input type="url" placeholder="Website Adderess" ng-model="query" class="url-bar" required>
+        <button class="button button-primary waves-effect" >get data</button>
       </form>
-    </div>
+    </header>
+
     <div class="row under-nav">
       {{html}}
     </div>
